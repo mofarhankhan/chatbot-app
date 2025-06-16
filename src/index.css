@@ -1,0 +1,41 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply border px-3 py-2 rounded-md w-full bg-gray-100 dark:bg-gray-700 text-black dark:text-white;
+}
+
+.btn {
+  @apply px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700;
+}
+
+/* Bonus 1: Add dark/light background transition */
+html {
+  transition: background-color 0.3s ease;
+}
+
+/* Bonus 2: Responsive input and button */
+@media (max-width: 640px) {
+  .input {
+    @apply text-sm;
+  }
+  .btn {
+    @apply text-sm px-2 py-1;
+  }
+}
+
+/* Bonus 3: Improved scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
