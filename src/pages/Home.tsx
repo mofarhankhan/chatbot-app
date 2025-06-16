@@ -24,7 +24,7 @@ export default function Home() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-    setMessages((prev) => [...prev, { type: 'user', text: input }]);
+    setMessages((prev) => [...prev, { type: 'bot', text: generateReply(input) }]);
 
     // setTimeout(() => {
     //   setMessages((prev) => [...prev, { type: 'bot', text: reply }]);
