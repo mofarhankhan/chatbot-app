@@ -24,13 +24,11 @@ export default function Home() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-    const userMsg = { type: 'user', text: input };
-   setMessages([{ type: 'bot', text: 'Hello!' }]);
+    setMessages((prev) => [...prev, { type: 'user', text: input }]);
 
-    setTimeout(() => {
-      const botMsg = { type: 'bot', text: generateReply(input) };
-      setMessages([{ type: 'bot', text: 'Hello!' }]);
-    }, 400);
+    // setTimeout(() => {
+    //   setMessages((prev) => [...prev, { type: 'bot', text: reply }]);
+    // }, 400);
 
     setInput('');
   };

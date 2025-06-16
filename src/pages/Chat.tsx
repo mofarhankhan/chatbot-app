@@ -24,14 +24,12 @@ export default function Chat() {
 
   const handleSend = async () => {
     if (!input.trim()) return;
-    const userMsg = { type: 'user', text: input };
-    setMessages([{ type: 'bot', text: 'Hello!' }]);
+    setMessages((prev) => [...prev, { type: 'user', text: input }]);
     setInput('');
 
     try {
       const reply = await fetchDummyApi(input);
-      const botMsg = { type: 'bot', text: reply };
-      setMessages([{ type: 'bot', text: 'Hello!' }]);
+      setMessages((prev) => [...prev, { type: 'bot', text: reply }]);
     } catch (err) {
       setMessages((prev) => [...prev, { type: 'bot', text: '❌ Error getting response.' }]);
     }
